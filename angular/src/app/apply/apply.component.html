@@ -1,0 +1,125 @@
+<nav class="navbar navbar-default">
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="home()">Home</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/calculator'
+    (click)="toggleDisplay()">Calculator</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank"
+    (click)="application()">Application</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="apply()">Apply Now</button>
+
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/trackstatus'>Track
+    Status</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/faq'
+    (click)="toggleDisplay()">FAQ</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/aboutus'
+    (click)="toggleDisplay()">About us</button>
+
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="logout()">Logout</button>
+</nav>
+
+<form class="border-class">
+  <h2 style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Filled Details are as follows:
+  </h2>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <div id="ss">
+          <h4 class="border border-info" style="text-align:center">Personal Details</h4>
+          <label for="first_name"><b>First Name:</b>&nbsp;</label>
+          <span>{{fn}}</span>
+          <br>
+          <label for="middle_name"><b>Middle Name:</b>&nbsp;</label>
+          <span>{{mn}}</span>
+          <br>
+          <label for="last_name"><b>Last Name:</b>&nbsp;</label>
+          <span>{{ln}}</span>
+          <br>
+          <label for="Date_of_Birth"><b>Date of Birth:</b>&nbsp;</label>
+          <span>{{dob| date}}</span>
+          <br>
+          <label for="Gender"><b>Gender:</b>&nbsp;</label>
+          <span>{{g}}</span>
+          <br>
+          <label for="Nationality"><b>Nationality:</b>&nbsp;</label>
+          <span>{{n}}</span>
+          <br>
+          <label for="aadhar_card"><b>Aadhar Card:</b>&nbsp;</label>
+          <span>{{ac}}</span>
+          <br>
+          <label for="pan_card"><b>Pan Card:</b>&nbsp;</label>
+          <span>{{pc}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <div id="ss">
+          <h4 class="border border-info" style="text-align:center">Loan Details</h4>
+          <label for="maxloan_amount"><b>Maxloan Amount:</b>&nbsp;</label>
+          <span>{{mla}}</span>
+          <br>
+          <label for="interest_rate"><b>Interest Rate:</b>&nbsp;</label>
+          <span>{{ir}}</span>
+          <br>
+          <label for="tenure"><b>Tenure:</b>&nbsp;</label>
+          <span>{{t}}</span>
+          <br>
+          <label for="loan_amount"><b>Loan Amount:</b>&nbsp;</label>
+          <span>{{la}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <div id="ss">
+          <h4 class="border border-info" style="text-align:center">Income Details</h4>
+          <label for="property_location"><b>Property Location:</b> &nbsp;</label>
+          <span>{{pl}}</span>
+          <br>
+          <label for="property_name"><b>Property Name:</b> &nbsp;</label>
+          <span>{{pn}}</span>
+          <br>
+          <label for="estimated_amount"><b>Estimated Amount</b>&nbsp;</label>
+          <span>{{ea}}</span>
+          <br>
+          <label for="employe_type"><b>Employee Type:</b>&nbsp;</label>
+          <span>{{et}}</span>
+          <br>
+          <label for="retirement_age"><b>Retirement Age:</b>&nbsp;</label>
+          <span>{{ra}}</span>
+          <br>
+          <label for="organization_type"><b>Organization Type:</b>&nbsp;</label>
+          <span>{{ot}}</span>
+          <br>
+          <label for="employer_name"><b>Employer Name:</b>&nbsp;</label>
+          <span>{{en}}</span>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" data-toggle="modal" data-target="#myModal" (click)="applyloan()">
+          Apply Now</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+      <div class="card">
+          <div class="text-right cross"> <i class="fa fa-times"></i> </div>
+          <div class="card-body text-center"> <img src="https://img.icons8.com/bubbles/200/000000/trophy.png">
+              <h4>CONGRATULATIONS!</h4>
+              <p>You have successfully applied for Home loan.</p>
+              <p>You can track your Loan status from Track status option.</p>
+              <p>Make a note of the following: </p> 
+              <p>Application Id : {{msg}}</p> 
+              <button class="btn btn-out btn-square continue">CONTINUE</button>
+          </div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

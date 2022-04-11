@@ -1,0 +1,75 @@
+<nav><button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/userapplication'>
+ Approve 1</button>
+
+ <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/userapplication2'>
+ Approve 2</button>
+ <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/viewall'>
+ View All Documents</button>
+
+ <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " (click)="logout()">
+ Logout</button>
+</nav>
+
+  <div class="d-flex justify-content-center pt-5" >
+    <div class="border pt-5 pb-5 pl-5 pr-5">
+    <!-- <div class = "border border-light"> -->
+          <input type="text" class="form-control" id="ApplicationId"  placeholder="Enter your Application Id" name ="ApplicationId" [(ngModel)]="ApplicationId">
+          <br><br>
+          <button id="b1" type="submit" name="submit"  (click)="viewAll()">View All Documents</button>
+
+          <br><br>
+          <br><br>
+          <br><br>
+          <div style="text-align: center;" id="docs" hidden>
+            <table style="width:100%"> 
+                <tr> 
+                    <th>List OF Documents</th> 
+                    <th>Documents</th> 
+                    
+                </tr> 
+                <tr> 
+                    <td>Pan Card</td> 
+                    <td><input type="button" (click)="download1()" value="Download "/></td> 
+                    
+                    
+                </tr> 
+                <tr> 
+                    <td>Addhar Card</td> 
+                    <td><input type="button" (click)="download2()" value="Download "/></td> 
+                    
+                </tr> 
+                <tr> 
+                    <td>LOC</td> 
+                    <td><input type="button" (click)="download3()" value="Download "/></td> 
+                    
+                </tr> 
+                <tr> 
+                    <td>NOC from Builder</td> 
+                    <td><input type="button" (click)="download4()" value="Download "/></td> 
+                    
+                </tr> 
+                <tr> 
+                    <td>salary slip</td> 
+                    <td><input type="button" (click)="download5()" value="Download "/></td> 
+                    
+                </tr> 
+                <tr> 
+                    <td>Agreement To Sale</td> 
+                    <td><input type="button" (click)="download6()" value="Download "/></td> 
+                    
+                </tr> 
+            </table>  
+      </div>
+        <br><br>
+    </div>
+  </div>
+ 
+
+ 
+ <router-outlet></router-outlet>
+
+ <br><br>
+ <br>
