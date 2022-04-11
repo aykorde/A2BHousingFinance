@@ -1,0 +1,129 @@
+<nav class="navbar navbar-default">
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank"(click)="home()">Home</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/calculator'
+    (click)="toggleDisplay()">Calculator</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" 
+    (click)="application()">Application</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" 
+    (click)="apply()">Apply Now</button>
+    
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/trackstatus'>Track Status</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/faq'
+    (click)="toggleDisplay()">FAQ</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/aboutus' 
+    (click)="toggleDisplay()">About us</button>
+    
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="logout()">Logout</button>
+  </nav>
+  
+    
+  <router-outlet></router-outlet>
+  <div class="bs-example">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">1. How do I apply for a loan in A2B Housing Finance?</button>									
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Click on Apply Now on our website, share your details and will get in touch to help you complete your application form</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo">2. What is minimum and maximum loan that I can avail?</button>									
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>The minimum loan amount you can avail is Rs. 2 lakhs while the maximum loan amount is Rs 25 lakhs</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree">3. What are the eligibility requirements for applying for a loan?</button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Our eligibility requirements are very simple:<br>
+
+                        1. Applicant should be an Indian Resident.<br>
+                        2. Minimum age of the applicant should be 21 years at the time of submitting the application.<br>
+                        3. The applicant’s age at the time of loan payment should not be more than 65 years.<br>
+                        4. The applicant can be a salaried or self-employed individual.  
+                    </p>   
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour">4. Can I use any home loan eligibility calculator to check my home loan eligibility?</button>                     
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>A home loan eligibility calculator is a tool to determine the amount of loan you are eligible for. 
+                        Different lenders have different criteria to evaluate your eligibility. <br>
+                        It is always good to check your home loan eligibility online to see the different rates and have a clear understanding of how much you can save with the lender of choice.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive">5. How is home loan eligibility calculated?</button>                     
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Loan eligibility is based on different factors that vary from vendor to vendor. <br>
+                        A housing loan eligibility calculator takes into consideration the primary requirements for home loan eligibility like employment type, income, existing EMIs, loan tenure, and rate of interest. <br>
+                        It only gives you an estimate of your expenditure, the actual amount may vary slightly.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseSix">6. How can I increase my home loan eligibility?</button>									
+                </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Your home loan eligibility depends on your loan repayment capacity. Use a loan eligibility checker, and input different values to better understanding of your loan eligibility:<br>
+                    <br>
+                    You can increase your home loan eligibility by:<br>
+                    1. Increasing your tenure for lower EMIs and easier repayment capacity.<br>
+                    2. Reducing the number of existing EMIs to show that you are not burdened with numerous EMI payments.
+                    <br>3.Applying with a co-applicant to increase your total income proving your repayment capability.
+                    <br>Use the home loan eligibility calculator to have a better estimate of your EMIs and plan your future expenses so that you don’t run out of resources.
+                </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseSeven">7. Re there any additional charges for bounces and late payment?</button>									
+                    </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Yes, if there is a delay in your EMI or a cheque bounces, a nominal charge of Rs. 500 + GST is applicable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

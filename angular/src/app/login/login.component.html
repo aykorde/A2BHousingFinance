@@ -1,0 +1,153 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from applying for Home Loan!</p>
+            <!-- <input type="submit" name="" value="Login"/><br/> -->
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab"
+                        aria-controls="home" aria-selected="true">User Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#register" role="tab"
+                        aria-controls="profile" aria-selected="false">User Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#adminlogin" role="tab"
+                        aria-controls="profile" aria-selected="false">Admin Login</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="login" name="login" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">User Login</h3>
+                    <form role="form" [formGroup]="loginform" (ngSubmit)="verifyuser()">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <input type="email" class="form-control" formControlName="email"
+                                        placeholder="Email Id *" value="" id="email" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" formControlName="password"
+                                        placeholder="Password *" value="" id="password" />
+                                </div>
+                            </div>
+                            <a routerLink='/forgotpassword'>Forgot your password?</a>
+                            <input type="submit" class="btnRegister" value="Login" />
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade show" id="register" role="tabpanel" aria-labelledby="profile-tab">
+                    <h3 class="register-heading">User Register</h3>
+                    <form role="form" [formGroup]="newuserform" (ngSubmit)="saveuser()">
+                        <div class="row register-form">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <input type="text" class="form-control" formControlName="first_name"
+                                        placeholder="First Name *" id="first_name" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="middle_name"
+                                        placeholder="Middle Name *" id="middle_name" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="last_name"
+                                        placeholder="Last Name *" id="last_name" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" formControlName="email"
+                                        placeholder="Email *" id="email" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" formControlName="password"
+                                        placeholder="Password *" id="password" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" maxlength="10" minlength="10" formControlName="phonenumber"
+                                        class="form-control" placeholder="Phone *" id="phonenumber" />
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <br>
+                                    <input type="date" class="form-control" formControlName="dob"
+                                        placeholder="Date of Birth *" id="dob" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="maxl">
+                                        
+                                        <label class="radio inline">
+                                            <input type="radio" value="MALE" formControlName="gender" checked>
+                                            <span> Male </span>
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="radio inline">
+                                            <input type="radio" value="FEMALE" formControlName="gender">
+                                            <span>Female </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nationality *"
+                                        formControlName="nationality" id="nationality" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Aadhar Card *"
+                                        formControlName="aadharcard" id="aadharcard" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Pan card *"
+                                        formControlName="pancard" id="pancard" />
+                                </div>
+                                
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="submit" class="btnRegister" value="Register" />
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade show" id="adminlogin" role="tabpanel" aria-labelledby="profile-tab">
+                    <h3 class="register-heading">Admin Login</h3>
+                    <form role="form" [formGroup]="adminloginform" (ngSubmit)="verifyadmin()">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <input type="text" class="form-control" formControlName="username"
+                                        placeholder="UserName *" value="" id="username" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" formControlName="password"
+                                        placeholder="Password *" value="" id="password" />
+                                </div>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="submit" class="btnRegister" value="Login"  /> 
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

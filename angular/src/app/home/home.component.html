@@ -1,0 +1,176 @@
+<nav class="navbar navbar-default">
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="home()">Home</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/calculator'
+    (click)="toggleDisplay()">Calculator</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank"
+    (click)="application()">Application</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="apply()">Apply Now</button>
+
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/trackstatus'>Track
+    Status</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/faq'
+    (click)="toggleDisplay()">FAQ</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/aboutus'
+    (click)="toggleDisplay()">About us</button>
+
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="logout()">Logout</button>
+</nav>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>A2B HOUSING FINANCE</h1>
+</div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>LTI GROUP</h2>
+      <h5>Dec 15, 2020</h5>
+      <div class="fakeimg" style="height:600px;"><img src="assets/img/banner.jpg" class="bigo" height= 300px alt="">
+        <br>
+        <br>
+
+        <div class="kadar">
+          <ul>
+            <li><p>Home Loans for purchase of a flat, row house, bungalow from private developers in approved projects</p></li>
+            <li><p>Home Loans for purchase of properties from Development Authorities such as DDA, MHADA etc</p></li>
+            <li><p>Loans for purchase of properties in an existing Co-operative Housing Society or Apartment Owners'</p></li>
+            <li><p>Loans for purchase of properties in an existing Co-operative Housing Society or Apartment Owners'</p></li>
+            </ul>
+        </div>
+        <br></div>
+      <p></p>
+      
+    </div>
+  </div>
+  <div class="rightcolumn">
+    
+    <div class="card">
+      <h3>Features and Benefits</h3>
+      <div class="fakeimg"><img src="assets/img/emi.jpg" alt="">
+        <br><br>
+        <h5>Low EMI</h5>
+        <p>Apply for higher loan amount with an extended tenure of 30 years to enjoy low EMIs</p></div>
+      <div class="fakeimg"><img src="assets/img/database.jpg" alt="">
+        <br><br>
+        <h5>Vast database of IBank approved projects</h5>
+        <p>Enjoy faster loan disbursement in projects approved by us</p></div>
+      <div class="fakeimg"><img
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wEEEAALAAsACwALAAwACwANAA4ADgANABIAEwARABMAEgAaABgAFgAWABgAGgAnABwAHgAcAB4AHAAnADwAJQArACUAJQArACUAPAA1AEAANAAwADQAQAA1AF8ASgBCAEIASgBfAG0AXABXAFwAbQCEAHYAdgCEAKcAngCnANoA2gElEQALAAsACwALAAwACwANAA4ADgANABIAEwARABMAEgAaABgAFgAWABgAGgAnABwAHgAcAB4AHAAnADwAJQArACUAJQArACUAPAA1AEAANAAwADQAQAA1AF8ASgBCAEIASgBfAG0AXABXAFwAbQCEAHYAdgCEAKcAngCnANoA2gEl/8IAEQgAUABQAwEiAAIRAQMRAf/EABoAAQADAQEBAAAAAAAAAAAAAAADBAUBAgf/2gAIAQEAAAAA+uAAACCkuWAZV3kN+OQZWqz/AB3SGVqqEPdQZXrkt+GYVoO+7gAAAP/EABcBAQEBAQAAAAAAAAAAAAAAAAABAwT/2gAIAQIQAAAAAwm9ZTLrcs6qD//EABgBAQEBAQEAAAAAAAAAAAAAAAADAQQC/9oACAEDEAAAAAK7LFNpzL+ufAf/xAAyEAABAwMBBQUGBwAAAAAAAAABAgMEAAUREhATIDGxFBV0g5MhQEFUgYIjMkJFYnLB/9oACAEBAAE/APdpctuI2FKCjlQSAkZJJ+ArvlXyMv0675V8jL9Ooc9EsrAbWhSMakLGCM8d35wfFt1JErdDs2715/XnGPpUTtuF9qDP8dGf9qAQm8XXyumyJMbksh1AODke34Y4bvzg+Lb2wsd73byulMKWzc5bGolK0BY6GrRpQ9OQeSX1Efdw3fnB8W3tgkIu918rpTCVOXOU9pIShCWx1NWo5enOYyFPkD7eG784Pi26usx2Gw2tvRlTgSSrOAPpVmuDkxySHS2QgJwUAjn/AGqAQm8XXyumyLGbishtBOAScnmc8M6EZTKPxN2pCwtBxnBFd23Y/uY9JNC23ccroPSFRIS4zjzjr+9ccI1Kxp/L7z//xAAmEQACAgEBBgcAAAAAAAAAAAABAgMRABASICEiMnITM0FhgZHB/9oACAECAQE/AN5i5d6agtemBpA0dtYY1RHtliwL46p5snxkvXD3/hxetO9vrWQSAybKtzVRFYglPhBlblYksayhYNcd/wD/xAAkEQADAAECBQUBAAAAAAAAAAABAhEAAzIQEiBhchMhIoGRwf/aAAgBAwEBPwDqAQKtFvfIhDwbRbe+Qy8W2J95p7dXw/oxtr+C/vFOQhOZh7E0G450x6hVl+SgAC5TJ1//2Q=="
+        alt="">
+        <br><br>
+        <h5>Trackmyloan</h5>
+        <p>Facility to check your Home Loan status on the go</p></div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

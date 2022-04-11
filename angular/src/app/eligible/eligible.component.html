@@ -1,0 +1,73 @@
+<nav class="navbar navbar-default">
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank"(click)="home()">Home</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/calculator'
+  (click)="toggleDisplay()">Calculator</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" 
+  (click)="application()">Application</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" 
+  (click)="apply()">Apply Now</button>
+  
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/trackstatus'>Track Status</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/faq'
+  (click)="toggleDisplay()">FAQ</button>
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/aboutus' 
+  (click)="toggleDisplay()">About us</button>
+  
+  <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="logout()">Logout</button>
+</nav>
+
+  
+<router-outlet></router-outlet>
+<hr>
+<!-- <nav class="navbar navbar-default text-center"> -->
+  <!-- &nbsp; -->
+  <div class="container" role="main">
+
+      <div  class="center-block text-center">    
+              <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 blank" 
+                  [hidden] = "isShow" routerLink='/calculator/eligible' (click)="toggleDisplay()">
+                  Eligibility Calculator
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 px-4 blank" 
+                  [hidden] = "isShow" routerLink='/calculator/emi' (click)="toggleDisplay()">
+                  EMI Calculator
+              </button>
+      </div>
+  </div>
+<!-- </nav> -->
+<router-outlet></router-outlet>
+
+<br>
+<h1 style="text-align: center">Eligibility Calculator</h1>
+<br><br>
+<div class="container" pt-4 pl-6 pr-6>
+    <div class="spacer">
+      <div class="row">
+        <div class="col-lg-8  col-lg-offset-1">
+            <div class="well">
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <span class="left-title" pl-4 pr-4>Monthly Income</span>
+                            <input type="text" class="form-control" (blur)="tbupdate(3)"
+                            placeholder="Loan Tenure in Mo" [(ngModel)]="query.tenureMo" style="width:30%;float:right;">
+                    </div>
+                    <ng5-slider [(value)]="memi.value" [options]="moptions" (userChangeEnd)="update()">
+                    </ng5-slider>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="well">
+    
+              <div class="jusify-center">
+                    <h5>Loan Amount</h5>
+                    <span class="result">{{result.emi || "--"}}</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

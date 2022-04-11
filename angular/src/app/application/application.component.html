@@ -1,0 +1,184 @@
+<nav class="navbar navbar-default">
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="home()">Home</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/calculator'
+        (click)="toggleDisplay()">Calculator</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank"
+        (click)="application()">Application</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="apply()">Apply Now</button>
+
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/trackstatus'>Track
+        Status</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/faq'
+        (click)="toggleDisplay()">FAQ</button>
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" routerLink='/aboutus'
+        (click)="toggleDisplay()">About us</button>
+
+    <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-4 pr-4 blank" (click)="logout()">Logout</button>
+</nav>
+
+
+<router-outlet></router-outlet>
+<!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Home Loan Application</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <div id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="loan"><strong>Loan</strong></li>
+                                <li id="income"><strong>Income</strong></li>
+                                <li id="upload"><strong>Documents upload</strong></li>
+                                <li id="confirm"><strong>Finish</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+
+                                <h2 class="fs-title" class="text-center">Loan Details</h2>
+                                <div class="form-card">
+                                    <form role="form" [formGroup]="loanform" (ngSubmit)="saveloan()">
+                                        <input type="text" placeholder="Max Loan Amount Grantable"
+                                            formControlName="maxloanamount" />
+
+                                        <input type="text" placeholder="Interest Rate" formControlName="interestrate" />
+                                        <input type="text" placeholder="Tenure" formControlName="tenure" />
+                                        <input type="text" placeholder="Loan Amount" formControlName="loanamount" />
+                                        <input type="submit" name="submit" value="Submit" />
+                                    </form>
+                                </div>
+                                <input type="button" name="next" class="next action-button" value="Next Step" id="next1"
+                                    disabled />
+                            </fieldset>
+                            <fieldset>
+
+                                <h2 class="fs-title" class="text-center">Income Details</h2>
+                                <div class="form-card">
+                                    <form role="form" [formGroup]="incomeform" (ngSubmit)="saveincome()">
+                                        <input type="text" placeholder="Property Location"
+                                            formControlName="propertylocation" />
+                                        <input type="text" placeholder="Property Name" formControlName="propertyname" />
+                                        <input type="number" placeholder="Estimated Amount"
+                                            formControlName="estimatedamount" />
+                                        <label for="employmenttype">Type of Employment</label>&nbsp;&nbsp;
+                                        <select id="employmenttype" formControlName="employmenttype"
+                                            class="form-group">
+                                            <option value="salaried">Salaried</option>
+                                            <option value="selfemployed">Self-Employed</option>
+                                            <option value="freelancer">Freelancer</option>
+                                        </select>
+                                        <br><br>
+                                        <input type="number" placeholder="Retirement Age"
+                                            formControlName="retirementage" />
+                                        <br>
+                                        <label for="organization_type">Organization Type</label>&nbsp;&nbsp;
+                                        <select id="organization_type" formControlName="organizationtype"
+                                            class="form-group">
+                                            <option value="private">Private</option>
+                                            <option value="public">Public</option>
+                                            <option value="joint">Joint</option>
+                                        </select>
+                                        <br><br>
+
+                                        <input type="text" placeholder="Employer Name" formControlName="employername" />
+                                        <input type="submit" name="submit" value="Submit" />
+                                    </form>
+                                </div>
+                                <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" />
+                                <input type="button" name="next" class="next action-button" id="next2" value="Next Step"
+                                    disabled />
+                            </fieldset>
+                            <fieldset>
+
+                                <h2 class="fs-title" class="text-center">Documents Upload</h2>
+                                <div class="form-card">
+                                    <form [formGroup]='uploadForm' (ngSubmit)="pan()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">Pan Card</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+
+                                    <form [formGroup]='uploadForm' (ngSubmit)="voterid()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">Voter Id</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+                                    <form [formGroup]='uploadForm' (ngSubmit)="salarys()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">Salary Slip</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+
+
+                                    <form [formGroup]='uploadForm' (ngSubmit)="loa()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">LOA</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+                                    <form [formGroup]='uploadForm' (ngSubmit)="noc()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">NOC</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+
+                                    <form [formGroup]='uploadForm' (ngSubmit)="ats()" enctype="multipart/form-data">
+                                        <label for="exampleFormControlFile1">Agreement To Sale</label>
+                                        <input type="file" id="file" name="profile" (change)="uploadfiles($event)"
+                                            class="fadeIn second" placeholder="panccard">
+
+                                        <input type="submit" class="fadeIn fourth" value="Upload File">
+                                    </form>
+                                    <BR>
+
+                                    <input type="button" name="gencheck" value="Generate Checklist"
+                                        (click)="generatechecklist()" />
+
+                                    <span id="uploaded" hidden>{{uploaded}}</span>
+                                    <br>
+                                    <br>
+                                    <span id="notuploaded" hidden>{{notuploaded}}</span>
+
+                                </div>
+                                <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="button" name="make_payment"
+                                    class="next action-button" id="confirm" value="Confirm" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                                class="fit-image"> </div>
+                                    </div> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-7 text-center">
+                                            <h5>You Have Successfully filled all the details</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
