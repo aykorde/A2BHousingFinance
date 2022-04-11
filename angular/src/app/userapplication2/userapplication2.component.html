@@ -1,0 +1,55 @@
+<head>
+  <meta http-equiv="refresh" content="5" />
+</head>
+
+<button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/userapplication'>
+ Approve 1</button>
+
+ <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/userapplication2'>
+ Approve 2</button>
+ <!-- <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " 
+ routerLink='/admin/viewall'>
+ View All Documents</button> -->
+ <button type="button" class="btn btn-outline-dark pt-3 pb-3 pl-3 pr-3 ml-4 blank " (click)="logout()">
+  Logout</button>
+ <router-outlet></router-outlet>
+ <br><br>
+ <br>
+
+<div class="container">
+    <h2>Users List who have applied for loan</h2>
+    <br>                                                                            
+    <div class="table-responsive ">
+      <table class="table table-bordered table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Application Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Interest Rate</th>
+            <th>Tenure</th>
+            <th>Loan Amount</th>
+            <th>Max Loan Amount</th>
+            <th>Approve</th>
+            <th>Reject</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let users of approve2list">
+            <td>{{users[0]}}</td>
+            <td>{{users[1]}}</td>
+            <td>{{users[2]}}</td>
+            <td>{{users[3]}}</td>
+            <td>{{users[4]}}</td>
+            <td>{{users[5]}}</td>
+            <td>{{users[6]}}</td>
+            <td><button (click)="approve2(users[0])">Approve</button></td>
+            <td><button (click)="reject(users[0])">Reject</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
